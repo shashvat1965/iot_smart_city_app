@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 class SmartParkingApi {
-  static String baseUrl = "https://b3b1-2a09-bac5-3cd7-1eb-00-31-dc.ngrok-free.app";
+  static String baseUrl = "https://a5a6-2a09-bac5-3cd3-16a0-00-241-59.ngrok-free.app";
   static String initiate = "$baseUrl/main/park-sim/";
   static String status = "$baseUrl/main/park-sim/status/";
   HttpClient client = HttpClient();
@@ -23,15 +23,15 @@ class SmartParkingApi {
 
   checkStatus(String task) async {
     String url = "$status$task";
-    String? taskStatus;
+    Map<String, dynamic> data = {};
     await client.getUrl(Uri.parse(url)).then((HttpClientRequest request) async {
       return await request.close();
     }).then((HttpClientResponse response) async {
-      String data = await response.transform(utf8.decoder).join();
+      String responseString = await response.transform(utf8.decoder).join();
       // string to json
-      Map<String, dynamic> jsonData = jsonDecode(data);
-      taskStatus = jsonData['status'];
+      Map<String, dynamic> jsonData = jsonDecode(responseString);
+      data = jsonData;
     });
-    return taskStatus;
+    return data;
   }
 }
