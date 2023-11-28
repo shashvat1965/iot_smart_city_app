@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 class SmartTrafficApi {
-  static String baseUrl = "https://6bab-103-144-92-133.ngrok-free.app";
+  static String baseUrl = "https://b3b1-2a09-bac5-3cd7-1eb-00-31-dc.ngrok-free.app";
   static String initiate = "$baseUrl/main/simulation/";
   static String status = "$baseUrl/main/simulation/status/";
   static String getResultInitiate = "$baseUrl/main/get-results/";
@@ -64,3 +64,8 @@ class SmartTrafficApi {
     return result;
   }
 }
+
+
+//park-sim/
+
+//park-sim/status/id

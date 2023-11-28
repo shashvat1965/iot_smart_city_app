@@ -35,29 +35,6 @@ class SmartTrafficState extends State<SmartTraffic> {
     });
   }
 
-  List<LineChartBarData> linesBarData() {
-    List<LineChartBarData> lines = [];
-
-    for (int i = 0; i < cumulativeData.length; i++) {
-      List<FlSpot> spots = [];
-
-      for (int j = 0; j < cumulativeData[i].length; j++) {
-        spots.add(FlSpot(j.toDouble(), cumulativeData[i][j].toDouble()));
-      }
-
-      lines.add(
-        LineChartBarData(
-          spots: spots,
-          isCurved: true,
-          colors: [Colors.blue], // Change color as needed
-          belowBarData: BarAreaData(show: false),
-        ),
-      );
-    }
-
-    return lines;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,23 +75,6 @@ class SmartTrafficState extends State<SmartTraffic> {
                 buttonPressHandle();
               },
               child: const Text("Next Simulation")),
-          Expanded(
-            child: LineChart(
-              LineChartData(
-                gridData: FlGridData(show: false),
-                titlesData: FlTitlesData(show: false),
-                borderData: FlBorderData(
-                  show: true,
-                  border: Border.all(color: const Color(0xff37434d), width: 1),
-                ),
-                minX: 0,
-                maxX: cumulativeData[0].length.toDouble() - 1,
-                minY: 0,
-                maxY: 15,
-                lineBarsData: linesBarData(),
-              ),
-            ),
-          ),
           SizedBox(
             height: 120.h,
           ),
