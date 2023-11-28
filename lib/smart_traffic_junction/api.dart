@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 class SmartTrafficApi {
-  static String baseUrl = "https://c086-2402-3a80-8f9-5b95-75b8-964f-d74c-627b.ngrok-free.app";
+  static String baseUrl = "https://1027-2402-3a80-8f9-5b95-9163-dff1-b04c-624b.ngrok-free.app";
   static String initiate = "$baseUrl/main/simulation/";
   static String status = "$baseUrl/main/simulation/status/";
   static String getResultInitiate = "$baseUrl/main/get-results/";

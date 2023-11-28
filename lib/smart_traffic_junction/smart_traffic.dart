@@ -52,11 +52,11 @@ class SmartTrafficState extends State<SmartTraffic> {
     List<ChartData> chartDataList = [];
 
       for (int i  = 0; i < cumulativeData[0].length; i++ ) {
-        print(cumulativeData[0][i].toString());
+        print(cumulativeData[2][i].toString());
         chartDataList.add(
           ChartData(
             "Iteration $i", // x
-            cumulativeData[0][i].toDouble(), // y
+            cumulativeData[2][i].toDouble(), // y
           ),
         );
       }

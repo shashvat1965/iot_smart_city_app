@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 class SmartParkingApi {
-  static String baseUrl = "https://a5a6-2a09-bac5-3cd3-16a0-00-241-59.ngrok-free.app";
+  static String baseUrl = "https://1027-2402-3a80-8f9-5b95-9163-dff1-b04c-624b.ngrok-free.app";
   static String initiate = "$baseUrl/main/park-sim/";
   static String status = "$baseUrl/main/park-sim/status/";
   HttpClient client = HttpClient();
